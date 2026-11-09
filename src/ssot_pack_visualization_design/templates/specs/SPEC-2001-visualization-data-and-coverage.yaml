@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Specify measure, unit, grain, eligibility, aggregation, denominator, timezone, reporting period, and observation or snapshot identity.",
+  "body": "- Specify measure, unit, grain, eligibility, aggregation, denominator, timezone, reporting period, and observation or snapshot identity.\n- Represent observed zero, incomplete coverage, unavailable data and not-applicable as distinct states; partial counts must carry their coverage qualification.\n- Make displayed counts and drill-down evidence reconcile under identical filters and snapshot. Do not infer event-time activity from changes in cumulative snapshots.\n\nVerification evidence:\n- Fixtures with zero, missing, partial and not-applicable cells, empty selections and timezone boundaries.\n- Independent recomputation of totals, denominators and detail reconciliation from recorded source rows.",
+  "id": "spc:visualization-data-and-coverage",
+  "number": 2001,
+  "slug": "visualization-data-and-coverage",
+  "title": "Data, coverage and provenance",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-task-and-claim-boundary"
+  ],
+  "primary_targets": [
+    "Data, coverage and provenance"
+  ],
+  "scope": {
+    "governs": [
+      "Data, coverage and provenance"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf"
+  ],
+  "evidence_refs": [
+    "munzner",
+    "borkin"
+  ],
+  "requirements": [
+    "Specify measure, unit, grain, eligibility, aggregation, denominator, timezone, reporting period, and observation or snapshot identity.",
+    "Represent observed zero, incomplete coverage, unavailable data and not-applicable as distinct states; partial counts must carry their coverage qualification.",
+    "Make displayed counts and drill-down evidence reconcile under identical filters and snapshot. Do not infer event-time activity from changes in cumulative snapshots."
+  ],
+  "evidence_expectations": [
+    "Fixtures with zero, missing, partial and not-applicable cells, empty selections and timezone boundaries.",
+    "Independent recomputation of totals, denominators and detail reconciliation from recorded source rows."
+  ]
+}

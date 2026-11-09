@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visualization-design-governance-pack"
+version = "0.1.0"
+description = "SSOT governance for evidence-based visualization design and validation."
+readme = "README.md"
+requires-python = ">=3.10,<3.15"
+dependencies = ["ssot-pack-contracts>=0.2.17,<0.3.0"]
+keywords = ["ssot", "governance-pack", "data-visualization", "graphical-perception", "accessibility", "visualization-evaluation"]
+
+[project.urls]
+Repository = "https://github.com/groupsum/visualization-design-governance-pack"
+Issues = "https://github.com/groupsum/visualization-design-governance-pack/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ssot_pack_visualization_design = ["metadata.json", "evidence.json", "templates/adr/*.json", "templates/adr/*.yaml", "templates/specs/*.json", "templates/specs/*.yaml"]

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "ssot_package_name": "visualization-design-governance-pack",
+  "origin": {
+    "id": "pack:visualization-design",
+    "package_name": "visualization-design-governance-pack",
+    "import_name": "ssot_pack_visualization_design",
+    "kind": "governance-pack",
+    "title": "Evidence-Based Visualization Design",
+    "description": "Governed visual encoding, temporal and matrix displays, accessible interaction, and empirical evaluation.",
+    "homepage": "https://github.com/groupsum/visualization-design-governance-pack",
+    "repository": "https://github.com/groupsum/visualization-design-governance-pack"
+  },
+  "compatibility": {
+    "python": ">=3.10,<3.15",
+    "ssot_registry_schema": ">=0.8.0",
+    "ssot_pack_contract": ">=0.2.17,<0.3.0"
+  },
+  "trust": {
+    "trusted_by_default": false,
+    "origin": "extension-pack",
+    "reservation_owner": "extension-pack:visualization-design-governance-pack"
+  },
+  "documents": {
+    "adr": {
+      "manifest_path": "templates/adr/manifest.json"
+    },
+    "spec": {
+      "manifest_path": "templates/specs/manifest.json"
+    }
+  }
+}

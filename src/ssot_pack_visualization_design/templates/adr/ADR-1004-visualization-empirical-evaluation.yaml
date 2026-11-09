@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "adr",
+  "origin": "extension-pack",
+  "summary": "Separate literature evidence from downstream product evidence.",
+  "body": "- Separate literature evidence from downstream product evidence.\n- Compare with a credible baseline using predeclared task outcomes and acceptance margins.\n- Report uncertainty, exclusions, failures and limitations. An inconclusive result does not certify superiority.",
+  "id": "adr:visualization-empirical-evaluation",
+  "number": 1004,
+  "slug": "visualization-empirical-evaluation",
+  "title": "Empirical evaluation and evidence policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "scope": {
+    "governs": "Empirical evaluation and evidence policy",
+    "excludes": [
+      "Domain-specific metric ownership",
+      "Certification of downstream implementations"
+    ]
+  },
+  "authority_sources": [
+    "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+    "https://faculty.washington.edu/aragon/classes/hcde411/w13/readings/cleveland84.pdf",
+    "https://idl.cs.washington.edu/files/2010-MTurk-CHI.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf"
+  ],
+  "evidence_refs": [
+    "munzner",
+    "cleveland-mcgill",
+    "heer-bostock",
+    "borkin"
+  ],
+  "decision": [
+    "Separate literature evidence from downstream product evidence.",
+    "Compare with a credible baseline using predeclared task outcomes and acceptance margins.",
+    "Report uncertainty, exclusions, failures and limitations. An inconclusive result does not certify superiority."
+  ],
+  "consequences": [
+    "Downstream teams must retain a reviewable evidence trail and document exceptions."
+  ]
+}

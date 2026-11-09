@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Provide a meaningful title, scope, units and an equivalent readable value/evidence path that does not require color, hover or pointer precision.",
+  "body": "- Provide a meaningful title, scope, units and an equivalent readable value/evidence path that does not require color, hover or pointer precision.\n- Make filters, selection, disclosure and dismissal operable by keyboard and touch; announce the selection and restore focus when an inspector closes.\n- Preserve semantics at zoom and narrow widths. Page or group dense columns rather than shrinking type to illegibility.\n- Differentiate loading, errors, no matching data and unavailable coverage.\n\nVerification evidence:\n- Manual keyboard, focus, zoom, screen reader, touch and contrast checks on the actual downstream surface.\n- Tests showing the same evidence and filters on visual and alternative views.",
+  "id": "spc:visualization-accessible-inspection",
+  "number": 2005,
+  "slug": "visualization-accessible-inspection",
+  "title": "Accessible inspection and responsive interaction",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-density-and-interaction"
+  ],
+  "primary_targets": [
+    "Accessible inspection and responsive interaction"
+  ],
+  "scope": {
+    "governs": [
+      "Accessible inspection and responsive interaction"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/",
+    "https://hci.stanford.edu/publications/2009/heer-horizon-chi09.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf",
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "evidence_refs": [
+    "tufte",
+    "heer-kong-agrawala",
+    "borkin",
+    "wcag"
+  ],
+  "requirements": [
+    "Provide a meaningful title, scope, units and an equivalent readable value/evidence path that does not require color, hover or pointer precision.",
+    "Make filters, selection, disclosure and dismissal operable by keyboard and touch; announce the selection and restore focus when an inspector closes.",
+    "Preserve semantics at zoom and narrow widths. Page or group dense columns rather than shrinking type to illegibility.",
+    "Differentiate loading, errors, no matching data and unavailable coverage."
+  ],
+  "evidence_expectations": [
+    "Manual keyboard, focus, zoom, screen reader, touch and contrast checks on the actual downstream surface.",
+    "Tests showing the same evidence and filters on visual and alternative views."
+  ]
+}

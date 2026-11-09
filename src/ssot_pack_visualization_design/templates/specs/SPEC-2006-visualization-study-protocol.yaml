@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Before testing, record the audience, task, datasets, baseline, primary outcome, acceptance margin, sample plan, exclusion criteria and analysis plan.",
+  "body": "- Before testing, record the audience, task, datasets, baseline, primary outcome, acceptance margin, sample plan, exclusion criteria and analysis plan.\n- Hold data and task constant; randomize assignment or counterbalance order, record device and familiarity, and prevent practice effects or unequal access to exact labels.\n- Measure accuracy or error, completion time and failures; measure comprehension or recall separately when claimed. Report effect sizes with uncertainty, sample sizes, exclusions and missing outcomes.\n- Test domain usefulness with intended users, and separate accessibility and performance gates from experiment outcomes. Do not generalize beyond the tested population, tasks, stimuli and conditions.\n\nVerification evidence:\n- Versioned protocol and stimuli, anonymized task records, reproducible analysis, and a decision with limitations.\n- A baseline comparison and an explicit inconclusive outcome when uncertainty crosses the decision margin.",
+  "id": "spc:visualization-study-protocol",
+  "number": 2006,
+  "slug": "visualization-study-protocol",
+  "title": "Controlled comparison and product validation",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-empirical-evaluation"
+  ],
+  "primary_targets": [
+    "Controlled comparison and product validation"
+  ],
+  "scope": {
+    "governs": [
+      "Controlled comparison and product validation"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+    "https://faculty.washington.edu/aragon/classes/hcde411/w13/readings/cleveland84.pdf",
+    "https://idl.cs.washington.edu/files/2010-MTurk-CHI.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf"
+  ],
+  "evidence_refs": [
+    "munzner",
+    "cleveland-mcgill",
+    "heer-bostock",
+    "borkin"
+  ],
+  "requirements": [
+    "Before testing, record the audience, task, datasets, baseline, primary outcome, acceptance margin, sample plan, exclusion criteria and analysis plan.",
+    "Hold data and task constant; randomize assignment or counterbalance order, record device and familiarity, and prevent practice effects or unequal access to exact labels.",
+    "Measure accuracy or error, completion time and failures; measure comprehension or recall separately when claimed. Report effect sizes with uncertainty, sample sizes, exclusions and missing outcomes.",
+    "Test domain usefulness with intended users, and separate accessibility and performance gates from experiment outcomes. Do not generalize beyond the tested population, tasks, stimuli and conditions."
+  ],
+  "evidence_expectations": [
+    "Versioned protocol and stimuli, anonymized task records, reproducible analysis, and a decision with limitations.",
+    "A baseline comparison and an explicit inconclusive outcome when uncertainty crosses the decision margin."
+  ]
+}

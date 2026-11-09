@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Classify each authority as principle, framework, empirical study, replication, or normative standard; record task, comparator, outcome and limits where available.",
+  "body": "- Classify each authority as principle, framework, empirical study, replication, or normative standard; record task, comparator, outcome and limits where available.\n- Connect every effectiveness claim to the specific measured outcome and credible comparator. Recognition is not comprehension; a schema test is not a user study.\n- Require a release checklist that reconciles data, verifies accessibility and responsive behavior, and links product evidence for effectiveness claims.\n- Preserve contradictory results and record exceptions with rationale, owner, scope, expiry and retest criteria.\n\nVerification evidence:\n- Source-to-rule mapping with primary references and limitations; recorded exceptions and decisions.\n- Artifact or render evidence linked to a frozen design version and the dataset used in evaluation.",
+  "id": "spc:visualization-evidence-review",
+  "number": 2007,
+  "slug": "visualization-evidence-review",
+  "title": "Evidence traceability and claim review",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-empirical-evaluation"
+  ],
+  "primary_targets": [
+    "Evidence traceability and claim review"
+  ],
+  "scope": {
+    "governs": [
+      "Evidence traceability and claim review"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+    "https://faculty.washington.edu/aragon/classes/hcde411/w13/readings/cleveland84.pdf",
+    "https://idl.cs.washington.edu/files/2010-MTurk-CHI.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf"
+  ],
+  "evidence_refs": [
+    "munzner",
+    "cleveland-mcgill",
+    "heer-bostock",
+    "borkin"
+  ],
+  "requirements": [
+    "Classify each authority as principle, framework, empirical study, replication, or normative standard; record task, comparator, outcome and limits where available.",
+    "Connect every effectiveness claim to the specific measured outcome and credible comparator. Recognition is not comprehension; a schema test is not a user study.",
+    "Require a release checklist that reconciles data, verifies accessibility and responsive behavior, and links product evidence for effectiveness claims.",
+    "Preserve contradictory results and record exceptions with rationale, owner, scope, expiry and retest criteria."
+  ],
+  "evidence_expectations": [
+    "Source-to-rule mapping with primary references and limitations; recorded exceptions and decisions.",
+    "Artifact or render evidence linked to a frozen design version and the dataset used in evaluation."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Plot actual event or observation times and distinguish the two; show gaps rather than fabricating activity or interpolating unknown intervals.",
+  "body": "- Plot actual event or observation times and distinguish the two; show gaps rather than fabricating activity or interpolating unknown intervals.\n- Use compact sparklines beside a labeled value only where the intended task is pattern detection. Provide readable interval, units and exact values on inspection.\n- Align comparative panels in time and domain. For count buckets, state interval boundaries and whether the latest bucket is incomplete.\n- Validate compressed or layered alternatives at actual sizes against ordinary lines or bars; fall back if error or task completion misses the agreed margin.\n\nVerification evidence:\n- Sparse, flat, irregular, single-point and partial-bucket fixtures plus equal-timestamp policy.\n- Comparison at supported viewport sizes, with task error and time reported separately.",
+  "id": "spc:visualization-time-series-and-small-multiples",
+  "number": 2004,
+  "slug": "visualization-time-series-and-small-multiples",
+  "title": "Time series, sparklines and small multiples",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-density-and-interaction"
+  ],
+  "primary_targets": [
+    "Time series, sparklines and small multiples"
+  ],
+  "scope": {
+    "governs": [
+      "Time series, sparklines and small multiples"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/",
+    "https://hci.stanford.edu/publications/2009/heer-horizon-chi09.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf",
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "evidence_refs": [
+    "tufte",
+    "heer-kong-agrawala",
+    "borkin",
+    "wcag"
+  ],
+  "requirements": [
+    "Plot actual event or observation times and distinguish the two; show gaps rather than fabricating activity or interpolating unknown intervals.",
+    "Use compact sparklines beside a labeled value only where the intended task is pattern detection. Provide readable interval, units and exact values on inspection.",
+    "Align comparative panels in time and domain. For count buckets, state interval boundaries and whether the latest bucket is incomplete.",
+    "Validate compressed or layered alternatives at actual sizes against ordinary lines or bars; fall back if error or task completion misses the agreed margin."
+  ],
+  "evidence_expectations": [
+    "Sparse, flat, irregular, single-point and partial-bucket fixtures plus equal-timestamp policy.",
+    "Comparison at supported viewport sizes, with task error and time reported separately."
+  ]
+}

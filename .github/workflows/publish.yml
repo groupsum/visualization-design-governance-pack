@@ -1,0 +1,54 @@
+name: Publish to PyPI
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: visualization-design-pypi
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - run: python -m pip install uv==0.11.28
+      - run: python scripts/build_manifests.py --check
+      - run: uv build --out-dir dist
+      - name: Verify built wheel and downstream synchronization
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python dist/*.whl ssot-registry==0.2.26
+          .venv/bin/python -m unittest discover -s tests -v
+          mkdir "$RUNNER_TEMP/sync-smoke"
+          .venv/bin/ssot init "$RUNNER_TEMP/sync-smoke" --repo-id repo:visualization-smoke --repo-name "Visualization sync smoke" --version 0.1.0
+          .venv/bin/ssot pack sync "$RUNNER_TEMP/sync-smoke" ssot_pack_visualization_design --trust --yes
+          .venv/bin/ssot validate "$RUNNER_TEMP/sync-smoke"
+          sha256sum dist/*
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: python-dist
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+    uses: cobycloud/actions/.github/workflows/reusable-pypi-publish.yml@64fbe4c42d7e6f3e51f4843b4603fde776b89b7e
+    with:
+      artifact-name: python-dist
+      environment: pypi
+      publish-mode: trusted

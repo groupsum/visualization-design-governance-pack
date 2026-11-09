@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "spec",
+  "origin": "extension-pack",
+  "summary": "Use position on a common scale or aligned bars for precise magnitude comparisons; use a zero baseline for absolute magnitude bars.",
+  "body": "- Use position on a common scale or aligned bars for precise magnitude comparisons; use a zero baseline for absolute magnitude bars.\n- Use consistent domains, units and time windows across comparable panels. Explicitly disclose independent scales and do not invite cross-panel magnitude comparison on them.\n- Choose encodings for the task: aligned marks for comparison, temporal positions for change, sequential intensity for matrix patterns. Direct numeric lookup remains available.\n\nVerification evidence:\n- Paired fixtures with comparable panels, signed values, outliers, and an intentional independent-scale case.\n- Compare candidate and baseline on exact comparison or estimation error where a performance claim is made.",
+  "id": "spc:visualization-quantitative-encoding",
+  "number": 2002,
+  "slug": "visualization-quantitative-encoding",
+  "title": "Quantitative encodings and scales",
+  "status": "accepted",
+  "spec_kind": "governance",
+  "supersedes": [],
+  "superseded_by": [],
+  "adr_ids": [
+    "adr:visualization-encoding-policy"
+  ],
+  "primary_targets": [
+    "Quantitative encodings and scales"
+  ],
+  "scope": {
+    "governs": [
+      "Quantitative encodings and scales"
+    ],
+    "excludes": [
+      "Universal chart rankings",
+      "Unmeasured effectiveness claims"
+    ]
+  },
+  "authority_sources": [
+    "https://www.esri.com/en-us/esri-press/browse/semiology-of-graphics-diagrams-networks-maps",
+    "https://faculty.washington.edu/aragon/classes/hcde411/w13/readings/cleveland84.pdf",
+    "https://idl.cs.washington.edu/files/2010-MTurk-CHI.pdf",
+    "https://www.cs.rpi.edu/~cutler/classes/advancedgraphics/S23/papers/colorbrewer.pdf"
+  ],
+  "evidence_refs": [
+    "bertin",
+    "cleveland-mcgill",
+    "heer-bostock",
+    "harrower-brewer"
+  ],
+  "requirements": [
+    "Use position on a common scale or aligned bars for precise magnitude comparisons; use a zero baseline for absolute magnitude bars.",
+    "Use consistent domains, units and time windows across comparable panels. Explicitly disclose independent scales and do not invite cross-panel magnitude comparison on them.",
+    "Choose encodings for the task: aligned marks for comparison, temporal positions for change, sequential intensity for matrix patterns. Direct numeric lookup remains available."
+  ],
+  "evidence_expectations": [
+    "Paired fixtures with comparable panels, signed values, outliers, and an intentional independent-scale case.",
+    "Compare candidate and baseline on exact comparison or estimation error where a performance claim is made."
+  ]
+}

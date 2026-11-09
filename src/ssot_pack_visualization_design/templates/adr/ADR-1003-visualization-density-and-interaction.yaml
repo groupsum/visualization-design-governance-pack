@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "adr",
+  "origin": "extension-pack",
+  "summary": "Use compact marks for overview, a linked detail view for evidence, and tables for exact lookup.",
+  "body": "- Use compact marks for overview, a linked detail view for evidence, and tables for exact lookup.\n- Remove decoration that interferes with the task, not labels, meaningful guides or cues that support recall.\n- Demonstrate readability and input parity at supported sizes and themes; offer a simpler fallback when compact encoding fails.",
+  "id": "adr:visualization-density-and-interaction",
+  "number": 1003,
+  "slug": "visualization-density-and-interaction",
+  "title": "Density and interaction policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "scope": {
+    "governs": "Density and interaction policy",
+    "excludes": [
+      "Domain-specific metric ownership",
+      "Certification of downstream implementations"
+    ]
+  },
+  "authority_sources": [
+    "https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/",
+    "https://hci.stanford.edu/publications/2009/heer-horizon-chi09.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf",
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "evidence_refs": [
+    "tufte",
+    "heer-kong-agrawala",
+    "borkin",
+    "wcag"
+  ],
+  "decision": [
+    "Use compact marks for overview, a linked detail view for evidence, and tables for exact lookup.",
+    "Remove decoration that interferes with the task, not labels, meaningful guides or cues that support recall.",
+    "Demonstrate readability and input parity at supported sizes and themes; offer a simpler fallback when compact encoding fails."
+  ],
+  "consequences": [
+    "Downstream teams must retain a reviewable evidence trail and document exceptions."
+  ]
+}

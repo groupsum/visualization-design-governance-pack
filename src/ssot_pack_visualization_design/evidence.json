@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "id": "tufte",
+      "authors": "Edward Tufte",
+      "title": "Sparkline theory and practice",
+      "kind": "design-principle",
+      "url": "https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/",
+      "method": "Design exposition with worked examples.",
+      "finding": "Compact time series can sit alongside the number or text they contextualize.",
+      "limits": "Illustrations do not establish a universal accuracy or usability gain."
+    },
+    {
+      "id": "bertin",
+      "authors": "Jacques Bertin",
+      "title": "Semiology of Graphics (1967; English edition referenced)",
+      "kind": "design-framework",
+      "url": "https://www.esri.com/en-us/esri-press/browse/semiology-of-graphics-diagrams-networks-maps",
+      "method": "Systematic visual-variable framework with diagrams, networks and maps.",
+      "finding": "Choose a visual variable that preserves the data relationship; keep categorical identity distinct from ordered magnitude.",
+      "limits": "The publisher summary identifies the framework; it is not a controlled performance comparison."
+    },
+    {
+      "id": "cleveland-mcgill",
+      "authors": "William Cleveland and Robert McGill",
+      "title": "Graphical Perception (1984)",
+      "kind": "controlled-experiment",
+      "url": "https://faculty.washington.edu/aragon/classes/hcde411/w13/readings/cleveland84.pdf",
+      "method": "Participants estimated relative magnitudes from different elementary graphical encodings; estimation error compared by encoding.",
+      "finding": "For exact magnitude comparisons, prefer position on a common scale over less directly comparable encodings such as angle or area.",
+      "limits": "Task-specific ranking; not a ranking of all chart types, audiences or analytical goals."
+    },
+    {
+      "id": "heer-bostock",
+      "authors": "Jeffrey Heer and Michael Bostock",
+      "title": "Crowdsourcing Graphical Perception (2010)",
+      "kind": "replication-and-extension",
+      "url": "https://idl.cs.washington.edu/files/2010-MTurk-CHI.pdf",
+      "method": "Crowdsourced replication of spatial and luminance tasks; additional experiments on rectangles, chart size and gridline spacing.",
+      "finding": "Prior spatial-encoding findings largely replicated; rendering geometry and chart dimensions are testable factors.",
+      "limits": "Crowd study and simplified stimuli do not substitute for accessibility or product-domain testing."
+    },
+    {
+      "id": "munzner",
+      "authors": "Tamara Munzner",
+      "title": "A Nested Model for Visualization Design and Validation (2009)",
+      "kind": "evaluation-framework",
+      "url": "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+      "method": "Separates domain characterization, data/task abstraction, encoding/interaction, and algorithm; maps validity threats to evaluation methods.",
+      "finding": "Match evaluation to the layer of the design claim. Fast rendering does not show that the right question is being answered.",
+      "limits": "Framework for selecting evaluation methods, not experimental proof of any encoding."
+    },
+    {
+      "id": "harrower-brewer",
+      "authors": "Mark Harrower and Cynthia Brewer",
+      "title": "ColorBrewer.org (2003)",
+      "kind": "design-framework",
+      "url": "https://www.cs.rpi.edu/~cutler/classes/advancedgraphics/S23/papers/colorbrewer.pdf",
+      "method": "Palette selection system based on data class, class count and viewing environment.",
+      "finding": "Use sequential schemes for ordered magnitude, diverging schemes for a meaningful center and qualitative schemes for categories.",
+      "limits": "Originally designed for maps; verify palette behavior on the downstream surface."
+    },
+    {
+      "id": "heer-kong-agrawala",
+      "authors": "Jeffrey Heer, Nicholas Kong and Maneesh Agrawala",
+      "title": "Sizing the Horizon (2009)",
+      "kind": "controlled-experiment",
+      "url": "https://hci.stanford.edu/publications/2009/heer-horizon-chi09.pdf",
+      "method": "Compared time-series value estimation across line, mirrored and layered displays at different heights.",
+      "finding": "At small tested heights some layered variants retained accuracy better; relative performance depended on height and design.",
+      "limits": "Does not establish a universal pixel threshold or show that horizon graphs outperform ordinary lines at every size."
+    },
+    {
+      "id": "borkin",
+      "authors": "Michelle Borkin et al.",
+      "title": "What Makes a Visualization Memorable? (2013)",
+      "kind": "recognition-study",
+      "url": "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf",
+      "method": "Rapid visual recognition experiment treating visualizations as images.",
+      "finding": "Recognition varies with visual characteristics; memorability is a separate outcome from analytical accuracy.",
+      "limits": "Image recognition does not establish comprehension, useful recall, or better decision-making."
+    },
+    {
+      "id": "wcag",
+      "authors": "W3C",
+      "title": "WCAG 2.2",
+      "kind": "normative-standard",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "method": "Accessibility success criteria, including non-text alternatives, use of color, keyboard access and hover/focus behavior.",
+      "finding": "Equivalent access must not depend on color or pointer hover alone.",
+      "limits": "Conformance requires testing the actual implementation against applicable criteria; a palette or library does not certify it."
+    }
+  ]
+}

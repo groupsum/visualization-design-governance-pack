@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.8.0",
+  "kind": "adr",
+  "origin": "extension-pack",
+  "summary": "Record intended audience, task, data grain, coverage, metric, comparison and intended decision before selecting a visual form.",
+  "body": "- Record intended audience, task, data grain, coverage, metric, comparison and intended decision before selecting a visual form.\n- Treat data correctness, perceptual accuracy, accessibility, retention and runtime performance as separate claims. No one metric certifies the others.\n- Record source evidence and applicability limits. Treat an untested transfer to a different task or audience as a hypothesis.",
+  "id": "adr:visualization-task-and-claim-boundary",
+  "number": 1001,
+  "slug": "visualization-task-and-claim-boundary",
+  "title": "Task and claim boundary",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "scope": {
+    "governs": "Task and claim boundary",
+    "excludes": [
+      "Domain-specific metric ownership",
+      "Certification of downstream implementations"
+    ]
+  },
+  "authority_sources": [
+    "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Munzner-ANestedModelForVisualizationDesignAndValidation.pdf",
+    "https://visualthinking.psych.northwestern.edu/publications/Borkin_Memorability_2013.pdf"
+  ],
+  "evidence_refs": [
+    "munzner",
+    "borkin"
+  ],
+  "decision": [
+    "Record intended audience, task, data grain, coverage, metric, comparison and intended decision before selecting a visual form.",
+    "Treat data correctness, perceptual accuracy, accessibility, retention and runtime performance as separate claims. No one metric certifies the others.",
+    "Record source evidence and applicability limits. Treat an untested transfer to a different task or audience as a hypothesis."
+  ],
+  "consequences": [
+    "Downstream teams must retain a reviewable evidence trail and document exceptions."
+  ]
+}
