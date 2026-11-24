@@ -43,12 +43,16 @@ jobs:
 
   publish:
     needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
     permissions:
       contents: read
-      actions: read
       id-token: write
-    uses: cobycloud/actions/.github/workflows/reusable-pypi-publish.yml@64fbe4c42d7e6f3e51f4843b4603fde776b89b7e
-    with:
-      artifact-name: python-dist
-      environment: pypi
-      publish-mode: trusted
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: python-dist
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist
