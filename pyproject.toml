@@ -7,6 +7,7 @@ name = "visualization-design-governance-pack"
 version = "0.1.0"
 description = "SSOT governance for evidence-based visualization design and validation."
 readme = "README.md"
+license = "Apache-2.0"
 requires-python = ">=3.10,<3.15"
 dependencies = ["ssot-pack-contracts>=0.2.17,<0.3.0"]
 keywords = ["ssot", "governance-pack", "data-visualization", "graphical-perception", "accessibility", "visualization-evaluation"]
@@ -20,3 +21,48 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 ssot_pack_visualization_design = ["metadata.json", "evidence.json", "templates/adr/*.json", "templates/adr/*.yaml", "templates/specs/*.json", "templates/specs/*.yaml"]
+
+[tool.readme_standards]
+policy = "package-guide-v1"
+brand = "groupsum"
+brand_catalog = "docs/readme-brands.toml"
+repository = "https://github.com/groupsum/visualization-design-governance-pack"
+ref = "master"
+package_path = "."
+layer = "governance"
+lifecycle = "active"
+license_file = "LICENSE"
+
+[tool.readme_standards.distributions.pypi]
+name = "visualization-design-governance-pack"
+published = false
+
+[tool.readme_standards.examples.quick_start]
+source = "examples/quick_start.py"
+expected_stdout = "examples/quick_start.stdout"
+test = ".github/workflows/readme-standards.yml"
+
+[tool.readme_standards.examples.usage]
+source = "examples/usage.py"
+expected_exit_code = 0
+test = ".github/workflows/readme-standards.yml"
+
+[tool.readme_standards.statuses.readme]
+label = "CI gate"
+url = "https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"
+
+[tool.readme_standards.statuses.tests]
+label = "package and example checks"
+url = "https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"
+
+[tool.readme_standards.statuses.certification]
+label = "not certified"
+url = "https://github.com/groupsum/visualization-design-governance-pack/blob/master/README.md#certification-status"
+
+[tool.readme_standards.statuses.governance]
+label = "pack governance"
+url = "https://github.com/groupsum/visualization-design-governance-pack/blob/master/docs/evaluation-protocol.md"
+
+[tool.readme_standards.statuses.evidence]
+label = "README and wheel checks"
+url = "https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"

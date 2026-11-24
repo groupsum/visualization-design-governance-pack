@@ -1,46 +1,315 @@
-# Visualization Design Governance Pack
+# visualization-design-governance-pack
 
-[![PyPI version](https://img.shields.io/pypi/v/visualization-design-governance-pack)](https://pypi.org/project/visualization-design-governance-pack/)
+<!-- readme-standards:begin branding -->
+<p align="center"><a href="https://github.com/groupsum/readme-standards"><img src="https://raw.githubusercontent.com/groupsum/readme-standards/master/docs/assets/readme-standards.svg" alt="Groupsum README Standards" width="300"></a></p>
+<p align="center"><strong>visualization-design-governance-pack</strong></p>
+<p align="center">SSOT governance for evidence-based visualization design and validation.</p>
+<p align="center">
+<a href="https://pypi.org/project/visualization-design-governance-pack/"><img alt="pypi: visualization-design-governance-pack unpublished" src="https://img.shields.io/static/v1?label=pypi&amp;message=visualization-design-governance-pack%20unpublished&amp;labelColor=1E293B&amp;color=92400E"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/pyproject.toml"><img alt="Source version: 0.1.0" src="https://img.shields.io/static/v1?label=Source%20version&amp;message=0.1.0&amp;labelColor=1E293B&amp;color=4338CA"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/pyproject.toml"><img alt="Python: &gt;=3.10,&lt;3.15" src="https://img.shields.io/static/v1?label=Python&amp;message=%3E%3D3.10%2C%3C3.15&amp;labelColor=1E293B&amp;color=0F766E"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/pyproject.toml"><img alt="Layer: governance" src="https://img.shields.io/static/v1?label=Layer&amp;message=governance&amp;labelColor=1E293B&amp;color=6D28D9"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/README.md#lifecycle-and-migration"><img alt="Lifecycle: active" src="https://img.shields.io/static/v1?label=Lifecycle&amp;message=active&amp;labelColor=1E293B&amp;color=166534"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/static/v1?label=License&amp;message=Apache-2.0&amp;labelColor=1E293B&amp;color=86198F"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/README.md#notices"><img alt="Notice: not required" src="https://img.shields.io/static/v1?label=Notice&amp;message=not%20required&amp;labelColor=1E293B&amp;color=475569"></a>
+</p>
+<p align="center">
+<a href="https://pypi.org/project/visualization-design-governance-pack/"><img alt="pypi downloads: visualization-design-governance-pack: unpublished" src="https://img.shields.io/static/v1?label=pypi%20downloads&amp;message=visualization-design-governance-pack%3A%20unpublished&amp;labelColor=1E293B&amp;color=92400E"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/README.md"><img alt="README hits: visualization-design-governance-pack" src="https://hits.sh/github.com/groupsum/visualization-design-governance-pack/README.md.svg?label=README%20hits&amp;labelColor=1E293B&amp;color=0E7490"></a>
+</p>
+<p align="center">
+<a href="https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"><img alt="README standards: CI gate" src="https://img.shields.io/static/v1?label=README%20standards&amp;message=CI%20gate&amp;labelColor=1E293B&amp;color=1D4ED8"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"><img alt="Tests: package and example checks" src="https://img.shields.io/static/v1?label=Tests&amp;message=package%20and%20example%20checks&amp;labelColor=1E293B&amp;color=0F766E"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/README.md#certification-status"><img alt="Certification: not certified" src="https://img.shields.io/static/v1?label=Certification&amp;message=not%20certified&amp;labelColor=1E293B&amp;color=92400E"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/blob/master/docs/evaluation-protocol.md"><img alt="Governance: pack governance" src="https://img.shields.io/static/v1?label=Governance&amp;message=pack%20governance&amp;labelColor=1E293B&amp;color=4338CA"></a>
+<a href="https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml"><img alt="Evidence: README and wheel checks" src="https://img.shields.io/static/v1?label=Evidence&amp;message=README%20and%20wheel%20checks&amp;labelColor=1E293B&amp;color=6D28D9"></a>
+</p>
+<p align="center"><a href="#overview">Overview</a> · <a href="#installation">Installation</a> · <a href="#quick-start">Quick Start</a> · <a href="#usage">Usage</a> · <a href="#public-api-and-import-surfaces">API</a> · <a href="#contributing">Contributing</a> · <a href="#governance">Governance</a> · <a href="#license">License</a></p>
+<!-- readme-standards:end branding -->
 
-An installable SSOT extension pack for teams designing charts, dashboards, compact quantitative displays, and interactive evidence views. It governs how a visualization communicates a measure and how claims of effectiveness are tested. It does not define business metrics or certify a downstream product.
+---
 
-## Synthesis
+## Overview
 
-| Factor | Rule | Basis and limits |
-|---|---|---|
-| Task and coverage | Specify the decision, population, measure, and coverage before choosing a chart. | Munzner's nested validation model; validates different threats at different design layers. |
-| Encoding | Choose visual variables that preserve semantics. Prefer aligned positions for precise magnitude comparisons. | Bertin supplies the taxonomy; Cleveland & McGill supply controlled magnitude-estimation evidence; Heer & Bostock replicate selected findings and test additional display factors. |
-| Density | Use compact temporal marks beside an exact value; retain an inspectable comparison scale and a fallback. | Tufte supplies the design principle. Heer, Kong & Agrawala show that relative error changes with display height and encoding; no universal minimum size follows. |
-| Color and coverage | Use ordered intensity for ordered values, a distinct non-color cue for unavailable coverage, and exact values on demand. | Bertin and Harrower & Brewer guide the mapping; WCAG supplies accessibility criteria. Validate in the actual theme and interaction context. |
-| Attention and retention | Remove nonfunctional clutter but preserve cues that orient readers. Test comprehension separately from memorability. | Borkin et al. measured rapid recognition, not decision accuracy. This qualifies a blanket ban on all visual decoration without making decoration a success criterion. |
+### Summary
 
-The [evidence register](src/ssot_pack_visualization_design/evidence.json) records the primary reference, method, bounded finding, and transfer limits for each source. ADRs state the resulting decisions; SPECs state requirements and acceptable verification evidence. They are portable and carry primary-source URLs. Use the [evaluation protocol](docs/evaluation-protocol.md) to turn a design preference into a falsifiable downstream claim.
+Governed visual encoding, temporal and matrix displays, accessible interaction, and empirical evaluation.
 
-## Using the pack
+### Why This Package
 
-Install the versioned distribution in the downstream SSOT environment and review its manifest before synchronization:
+The pack supplies versioned, source-linked ADR and SPEC templates for Evidence-Based Visualization Design.
 
-```sh
-uv add visualization-design-governance-pack==0.1.0
-uv run ssot pack sync . ssot_pack_visualization_design --preflight-only
+### When to Use
+
+Use this pack when a downstream SSOT Registry needs reusable decisions and requirements for Evidence-Based Visualization Design.
+
+### Features
+
+**Included ADRs**
+
+- [`adr:visualization-task-and-claim-boundary`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/adr/ADR-1001-visualization-task-and-claim-boundary.yaml) — Task and claim boundary
+- [`adr:visualization-encoding-policy`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/adr/ADR-1002-visualization-encoding-policy.yaml) — Visual encoding and comparison policy
+- [`adr:visualization-density-and-interaction`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/adr/ADR-1003-visualization-density-and-interaction.yaml) — Density and interaction policy
+- [`adr:visualization-empirical-evaluation`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/adr/ADR-1004-visualization-empirical-evaluation.yaml) — Empirical evaluation and evidence policy
+
+**Included SPECs**
+
+- [`spc:visualization-data-and-coverage`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2001-visualization-data-and-coverage.yaml) — Data, coverage and provenance
+- [`spc:visualization-quantitative-encoding`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2002-visualization-quantitative-encoding.yaml) — Quantitative encodings and scales
+- [`spc:visualization-matrix-color-and-states`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2003-visualization-matrix-color-and-states.yaml) — Matrix cells, palettes and coverage
+- [`spc:visualization-time-series-and-small-multiples`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2004-visualization-time-series-and-small-multiples.yaml) — Time series, sparklines and small multiples
+- [`spc:visualization-accessible-inspection`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2005-visualization-accessible-inspection.yaml) — Accessible inspection and responsive interaction
+- [`spc:visualization-study-protocol`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2006-visualization-study-protocol.yaml) — Controlled comparison and product validation
+- [`spc:visualization-evidence-review`](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates/specs/SPEC-2007-visualization-evidence-review.yaml) — Evidence traceability and claim review
+
+### Non-Goals
+
+The pack supplies governance records. A downstream application implements the controls and collects its own conformance evidence.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Use Python `>=3.10,<3.15`. Downstream synchronization also requires SSOT Registry and permission to write the target registry.
+
+### Installation
+
+#### uv
+
+<!-- readme-standards:begin installation.uv -->
+`visualization-design-governance-pack` is not declared published. From the source checkout:
+
+```bash
+uv pip install .
 ```
+<!-- readme-standards:end installation.uv -->
 
-The pack is **not trusted by default**. Follow the downstream registry's extension-pack policy; review the preview and any document-number reservations before applying it. No registry is mutated by importing the package.
+#### pip
 
-This requires SSOT Registry schema 0.8 or later. After explicit trust approval, apply with `uv run ssot pack sync . ssot_pack_visualization_design --trust --yes`, then run `uv run ssot validate .`.
+<!-- readme-standards:begin installation.pip -->
+`visualization-design-governance-pack` is not declared published. From the source checkout:
+
+```bash
+python -m pip install .
+```
+<!-- readme-standards:end installation.pip -->
+
+#### Poetry
+
+<!-- readme-standards:begin installation.poetry -->
+`visualization-design-governance-pack` is not declared published. From a separate Poetry project, replace the path with your checkout:
+
+```bash
+poetry add /path/to/visualization-design-governance-pack
+```
+<!-- readme-standards:end installation.poetry -->
+
+### Quick Start
+
+#### Example
+
+<!-- readme-standards:begin example.quick-start -->
+Source: [examples/quick_start.py](https://github.com/groupsum/visualization-design-governance-pack/blob/master/examples/quick_start.py).
 
 ```python
-from ssot_pack_visualization_design import load_pack_manifest
+"""Inspect the installed pack identity."""
 
-manifest = load_pack_manifest()
+from ssot_pack_visualization_design import load_pack_metadata
+
+metadata = load_pack_metadata()
+assert metadata["origin"]["id"] == "pack:visualization-design"
+print(metadata["origin"]["id"])
 ```
+<!-- readme-standards:end example.quick-start -->
 
-### Example: contributor activity
+#### Expected Result
 
-For an observed-commits view, use repositories as rows and weeks as columns. Label the branch scope, timezone, and snapshot. One sequential scale supports pattern discovery; a list gives exact counts and a selected cell opens its matching commit evidence. A covered zero is not a collection failure. Partial weeks are marked as such. A compact weekly bar series is a summary, not a substitute for exact lookup. Only count source-attributed events; do not estimate weekly commits from differences in cumulative totals.
+The script prints `pack:visualization-design` from the installed pack metadata.
 
-For an evaluation, compare this view with a credible sortable table over the same records. Ask readers to find the busiest week, identify the repository with more commits in a named week, distinguish a covered zero from missing data, and open the evidence. Counterbalance display order across participants, use matched datasets to avoid recall, and keep exact values available in both variants. Record incorrect, skipped, and timed-out tasks separately from successful task times. An example analysis plan would choose task accuracy as primary and set a predeclared non-inferiority margin, with completion time secondary; pick margins and sample size with the downstream team rather than inheriting a universal threshold. The pack contains **no downstream effectiveness results**.
+---
 
-## Maintainer checks
+## Usage
 
-With Python 3.11 or newer, regenerate manifests after editing templates with `python scripts/build_manifests.py`; use `--check` to verify the committed hashes. Run `python -m unittest discover -s tests` in an environment with the pack installed. Manifest integrity and traceability checks verify the package, not the success of any chart in production.
+### Common Workflows
+
+<!-- readme-standards:begin example.usage -->
+Source: [examples/usage.py](https://github.com/groupsum/visualization-design-governance-pack/blob/master/examples/usage.py).
+
+```python
+"""Resolve and read a packaged specification without synchronizing it."""
+
+from ssot_pack_visualization_design import load_document_manifest, read_packaged_document_text
+
+spec = next(row for row in load_document_manifest("spec") if row["id"] == "spc:visualization-data-and-coverage")
+document = read_packaged_document_text("spec", spec["filename"])
+assert spec["id"] in document
+```
+<!-- readme-standards:end example.usage -->
+
+Install SSOT Registry in the same environment, then run `uv run ssot pack sync . ssot_pack_visualization_design --preflight-only` from the target registry. After reviewing the preview and approving trust, run `uv run ssot pack sync . ssot_pack_visualization_design --trust --yes` and `uv run ssot validate .`.
+
+### Configuration
+
+Select the installed import package `ssot_pack_visualization_design` in SSOT Registry. Review reservation owner `extension-pack:visualization-design-governance-pack` and the target's trust policy before syncing.
+
+### Error Handling
+
+If preflight reports a schema, trust, or document-number conflict, resolve it in the target registry and repeat preflight before synchronization.
+
+### Best Practices
+
+Pin the pack version in downstream projects. Reference document IDs in local governance and inspect the change set before granting trust.
+
+---
+
+## Package Boundary
+
+### What It Owns
+
+The pack owns the Evidence-Based Visualization Design ADRs and SPECs listed under Features.
+
+### Public API and Import Surfaces
+
+Import `load_pack_metadata`, `load_document_manifest`, and `read_packaged_document_text` from `ssot_pack_visualization_design` to inspect packaged records.
+
+### Entry Points
+
+<!-- readme-standards:begin entry-points -->
+This package declares no command-line, GUI, or plugin entry points in its manifest.
+<!-- readme-standards:end entry-points -->
+
+### Injected Dependencies
+
+The package binds its metadata and document loaders through `ssot-pack-contracts`. The caller supplies the target registry to SSOT Registry when synchronizing.
+
+### Protocol Consumers
+
+SSOT Registry uses the pack metadata, document manifests, and bundled templates during inspect, preflight, and sync.
+
+### Extensions
+
+Define downstream policies as local records and reference the pack's document IDs. Send proposed changes to the canonical pack through repository review.
+
+---
+
+## Operations and Readiness
+
+### Operational Requirements
+
+Local inspection reads installed package resources. Synchronization requires an initialized downstream registry and explicit operator approval.
+
+### Health and Observability
+
+Review the preflight and sync output, then use `ssot validate` to check the resulting registry.
+
+### Security and Resource Limits
+
+Implicit trust is disabled. Review the exact distribution, version, records, and reserved IDs before enabling trust in a target registry.
+
+### Compatibility
+
+- Python `>=3.10,<3.15`
+- SSOT Registry schema `>=0.8.0`
+- SSOT pack contracts `>=0.2.17,<0.3.0`
+
+---
+
+## Verification
+
+### Tests
+
+Run `python -m unittest discover -s tests -v` with the pack installed. The [README workflow](https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml) checks the source README and runs both examples against an installed wheel.
+
+### Certification Status
+
+The pack has no external certification. Downstream adoption requires evidence for the controls an application implements.
+
+### Evidence
+
+See the [README workflow](https://github.com/groupsum/visualization-design-governance-pack/actions/workflows/readme-standards.yml) for package and documentation verification and the [packaged records](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/templates) for document-level sources.
+
+---
+
+## FAQ
+
+### Why
+
+**Why do document IDs matter?** Downstream records use them to trace an adopted decision or requirement to the pack that owns it.
+
+### How
+
+**How do I preview changes?** Use the registry's pack preflight before approving a sync.
+
+### When
+
+**When should I upgrade?** Read the changelog and preflight the new version against the target registry before applying it.
+
+---
+
+## Documentation and Related Packages
+
+### More Documentation
+
+See the [Pack guide](https://github.com/groupsum/visualization-design-governance-pack/blob/master/docs/pack-guide.md), [changelog](https://github.com/groupsum/visualization-design-governance-pack/blob/master/CHANGELOG.md), and [pack metadata](https://github.com/groupsum/visualization-design-governance-pack/blob/master/src/ssot_pack_visualization_design/metadata.json).
+
+### Related Packages
+
+[SSOT Registry](https://pypi.org/project/ssot-registry/) manages downstream registries. [SSOT Pack Contracts](https://pypi.org/project/ssot-pack-contracts/) provides the shared pack interface.
+
+### Project Links
+
+<!-- readme-standards:begin project-links -->
+- [Issues](https://github.com/groupsum/visualization-design-governance-pack/issues)
+- [Repository](https://github.com/groupsum/visualization-design-governance-pack)
+- [pypi: visualization-design-governance-pack](https://pypi.org/project/visualization-design-governance-pack/)
+<!-- readme-standards:end project-links -->
+
+---
+
+## Contributing
+
+### How to Contribute
+
+Open an [issue](https://github.com/groupsum/visualization-design-governance-pack/issues) or pull request describing the affected records, their authority, and the expected downstream effect.
+
+### Development Setup
+
+Install the checkout with `python -m pip install -e .`, then run `python -m unittest discover -s tests -v`. On Python 3.11 or newer, run `uvx --from readme-standards==0.1.3 readme-standards check`.
+
+### Notes for Maintainers
+
+Keep source links, document identifiers, and committed manifest hashes aligned. Run `uvx --from readme-standards==0.1.3 readme-standards render --write` after changing generated README inputs. Update the PyPI publication setting after the first successful upload.
+
+---
+
+## Governance
+
+### Ownership and Decision Making
+
+Groupsum maintains `pack:visualization-design`. The pack's reservation owner is `extension-pack:visualization-design-governance-pack`. Downstream registry operators approve synchronization.
+
+### Standards and Policies
+
+Review the [governance documentation](https://github.com/groupsum/visualization-design-governance-pack/blob/master/docs/evaluation-protocol.md) and the primary references carried by the individual records.
+
+### Lifecycle and Migration
+
+Review [release changes](https://github.com/groupsum/visualization-design-governance-pack/blob/master/CHANGELOG.md) and preflight the chosen version against each downstream registry.
+
+---
+
+## License and Attribution
+
+### License
+
+<!-- readme-standards:begin license -->
+Licensed under `Apache-2.0`. See [LICENSE](https://github.com/groupsum/visualization-design-governance-pack/blob/master/LICENSE).
+<!-- readme-standards:end license -->
+
+### Notices
+
+<!-- readme-standards:begin notices -->
+No separate NOTICE file is declared. Review the license and bundled third-party attributions.
+<!-- readme-standards:end notices -->
